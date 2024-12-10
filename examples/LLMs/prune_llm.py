@@ -383,7 +383,7 @@ def main():
     print(f"wikitext perplexity {ppl_test}")
 
     if args.save_model:
-        model.save_pretrained(args.save_model)
+        model.save_pretrained(args.save_model, max_shard_size="200MB")
         tokenizer.save_pretrained(args.save_model)
 
 if __name__ == '__main__':
